@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>首页</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/homepage.css">
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form>
+		<div class="layui-collapse">
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">首页大图</h2>
+				<br>
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">输入框</label>
+						<div class="layui-input-block">
+							<input id="topinput" type="text" name="title" required lay-verify="required"
+								placeholder="请输入标题" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">首页大图</label>
+						<div class="layui-upload">
+							<button type="button" class="layui-btn layui-btn-normal"
+								id="home1">选择文件</button>
+							<button type="button" class="layui-btn" id="pick1">开始上传</button>
+							<img id="home1-img" alt="" src="../../file/view/home1" style="width: 92px;height:38px; ">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">第二部分</h2>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">主标题</label>
+					<div class="layui-input-block">
+						<input id="input2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">副标题</label>
+					<div class="layui-input-block">
+						<input id="input3" type="text" name="title" required lay-verify="required"
+							placeholder="请输入副标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">对话：</label>
+				</div>
+				<div style="margin-left: 40px">
+					<table class="layui-hide" id="test" lay-filter="test"></table>
+				</div>
+
+
+
+				<script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+            </div>
+        </script>
+
+				<script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+
+			</div>
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">第三部分</h2>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">主标题</label>
+					<div class="layui-input-block">
+						<input id="input4" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">副标题</label>
+					<div class="layui-input-block">
+						<input id="input5" type="text" name="title" required lay-verify="required"
+							placeholder="请输入副标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">第四部分</h2>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">主标题</label>
+					<div class="layui-input-block">
+						<input id="input7" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">副标题</label>
+					<div class="layui-input-block">
+						<input id="input8" type="text" name="title" required lay-verify="required"
+							placeholder="请输入副标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">图1</label>
+					<div class="layui-upload">
+						<button type="button" class="layui-btn layui-btn-normal"
+							id="home2">选择文件</button>
+						<button type="button" class="layui-btn" id="pick2">开始上传</button>
+						<img id="home2-img" alt="" src="../../file/view/home2" style="width: 92px;height:38px; ">
+ 
+						<div class="layui-input-inline">
+							<input id="input9-1" type="text" name="title" required lay-verify="required"
+								placeholder="请输入主标题" autocomplete="off" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input id="input9-2" type="text" name="title" required lay-verify="required"
+								placeholder="请输入主标题" autocomplete="off" class="layui-input">
+						</div> 
+
+					</div>
+
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">图2</label>
+					<div class="layui-upload">
+						<button type="button" class="layui-btn layui-btn-normal"
+							id="home3">选择文件</button>
+						<button type="button" class="layui-btn" id="pick3">开始上传</button>
+						<img id="home3-img" alt="" src="../../file/view/home3" style="width: 92px;height:38px; ">
+						<div class="layui-input-inline">
+						 <input  id="input10-1"  type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-input-inline">
+						<input  id="input10-2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input"> 
+							</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">图3</label>
+					<div class="layui-upload">
+						<button type="button" class="layui-btn layui-btn-normal"
+							id="home4">选择文件</button>
+						<button type="button" class="layui-btn" id="pick4">开始上传</button>
+							<img id="home4-img" alt="" src="../../file/view/home4" style="width: 92px;height:38px; ">
+					 <div class="layui-input-inline">
+						 <input  id="input11-1" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-input-inline">
+						<input  id="input11-2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input"> 
+							</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">图4</label>
+					<div class="layui-upload">
+						<button type="button" class="layui-btn layui-btn-normal"
+							id="home5">选择文件</button>
+						<button type="button" class="layui-btn" id="pick5">开始上传</button>
+							<img id="home5-img" alt="" src="../../file/view/home5" style="width: 92px;height:38px; ">
+					<div class="layui-input-inline">
+						 <input  id="input12-1" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+							</div>
+							<div class="layui-input-inline">
+						<input  id="input12-2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input"> 
+							</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">第五部分</h2>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">主标题</label>
+					<div class="layui-input-block">
+						<input  id="input13-1" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">副标题</label>
+					<div class="layui-input-block">
+						<input id="input13-2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入副标题" autocomplete="off" class="layui-input">
+							
+					</div>
+				</div>
+			</div>
+
+
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">底部</h2>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">底部图片</label>
+					<div class="layui-upload">
+						<button type="button" class="layui-btn layui-btn-normal"
+							id="home6">选择文件</button>
+						<button type="button" class="layui-btn" id="pick6">开始上传</button>
+							<img id="home6-img" alt="" src="../../file/view/home6" style="width: 92px;height:38px; ">
+					</div>
+				</div>
+			</div>
+		</div>
+		<br> <br>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button id="submitButton" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- 你的HTML代码 -->
+
+	<script src="../layui/layui.all.js"></script>
+	<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        //监听提交
+    	  form.on('submit(formDemo)', function(data){
+    	    return false;
+    	  });
+    }();
+
+    
+    var $;
+    layui.use(['jquery'], function(){
+        $ = jQuery = layui.$;
+        // 你可以在下面的 js 代码中使用你熟悉的 $, jQuery
+    });
+
+
+    layui.use(['element', 'layer'], function(){
+        var element = layui.element;
+        var layer = layui.layer;
+
+        //监听折叠
+        element.on('collapse(test)', function(data){
+            layer.msg('展开状态：'+ data.show);
+        });
+    });
+    
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'homepage'
+			},
+		success: function(data) {
+			var obj = JSON.parse(data);
+			jQuery.each(obj, function(i, value) {  
+				$("#"+i).val(value);
+
+			});  
+		}
+		});
+	
+
+
+    var tableData = [{
+        "question": "JSON",
+        "answer": "北京市西城区"
+    },
+        {
+            "question": "JSON",
+            "answer": "北京市西城区"
+        }
+    ];
+
+    var table;
+    layui.use('table', function(){
+        table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,defaultToolbar:[]
+            ,data:tableData
+            ,toolbar: '#toolbarDemo'
+            ,title: '问答表'
+            ,cols: [[
+                 {field:'question', title:'问', fixed: 'left',edit: 'text'}
+                ,{field: 'answer', title:'答',fixed: 'left' ,edit: 'text'}
+                ,{field: 'option', title:'操作', toolbar: '#barDemo'}
+            ]]
+            ,page: false
+        });
+
+        //监听事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var oldData =  table.cache["test"];
+                    var data1= {
+                        "question": "",
+                        "answer": ""
+                    };
+                    oldData.push(data1);
+                    table.reload('test',{
+                        data : oldData
+                    });
+
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            } 
+        }); 
+
+    });
+
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'homepagetable'
+			},
+		success: function(data) {
+			tableData = JSON.parse(data);
+			 table.reload('test',{
+                 data : tableData
+             });
+		}
+		});
+    $("#test9").click(function () {
+        console.log(JSON.stringify(table.cache["test"]));
+    });
+    
+    
+    BZLayUI.upload("home1", "home1", "pick1");
+    BZLayUI.upload("home2", "home2", "pick2");
+    BZLayUI.upload("home3", "home3", "pick3");
+    BZLayUI.upload("home4", "home4", "pick4");
+    BZLayUI.upload("home5", "home5", "pick5");
+    BZLayUI.upload("home6", "home6", "pick6");
+    
+    $("#submitButton").on("click",function() {
+    	var controls = document.getElementsByTagName("input");
+    	var map = new Map();
+    	for (var i = 0; i < controls.length; i++) {
+    		if (controls[i].type == 'text') {
+    			map.set(controls[i].id, controls[i].value);
+    		}
+    	}
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'homepage',
+    			value:mapToJson(map)
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+    	
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'homepagetable',
+    			  value:JSON.stringify(table.cache["test"])
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+
+    
+
+    		 
+    });
+    
+	
+
+    
+    
+ function strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }
+    
+  /**
+  *map转换为json
+  */
+  function mapToJson(map) {
+  return JSON.stringify(strMapToObj(map));
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<!-- spring mvc 配置开始 -->
+
+	<!-- 前端控制器 -->
+	<servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 默认是在WEB-INF/servlet-name（spring-mvc）+servlet.xml -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-mvc-kael.xml</param-value>
+		</init-param>
+		<!-- 表示启动容器时初始化该Servlet -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
+		<!-- 表示哪些请求交给Spring Web MVC处理， “/” 是用来定义默认servlet映射的。也可以如“*.html”表示拦截所有以html为扩展名的请求。 -->
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- 编码设置开始 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 编码设置结束 -->
+
+	<!-- ETag（实体标记）缓存机制开始 -->
+	<filter>
+		<filter-name>ETag</filter-name>
+		<filter-class>org.springframework.web.filter.ShallowEtagHeaderFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ETag</filter-name>
+		<!-- 只过滤DispatcherServlet的请求 -->
+		<servlet-name>spring-mvc</servlet-name>
+	</filter-mapping>
+	<!-- ETag（实体标记）缓存机制结束 -->
+
+	<!-- restful风格的接口配置开始 -->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- restful风格的接口配置结束 -->
+
+	<!-- spring配置结束 -->
+
+	<!-- Druid 配置开始 -->
+	<filter>
+		<!-- WebStatFilter用于采集web-jdbc关联监控的数据。 -->
+		<filter-name>DruidWebStatFilter</filter-name>
+		<filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+		<!-- 经常需要排除一些不必要的url，比如.js,/jslib/等等。配置在init-param中。比如： -->
+		<init-param>
+			<param-name>exclusions</param-name>
+			<param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
+		</init-param>
+		<!-- 缺省sessionStatMaxCount是1000个。你可以按需要进行配置，比如： -->
+		<init-param>
+			<param-name>sessionStatMaxCount</param-name>
+			<param-value>1000</param-value>
+		</init-param>
+		<!-- 你可以关闭session统计功能，比如： -->
+		<init-param>
+			<param-name>sessionStatEnable</param-name>
+			
+			
+			<param-value>true</param-value>
+		</init-param>
+		<!-- 你可以配置principalSessionName，使得druid能够知道当前的session的用户是谁。比如： 根据需要，把其中的xxx.user修改为你user信息保存在session中的sessionName。 
+			注意：如果你session中保存的是非string类型的对象，需要重载toString方法。 -->
+		<init-param>
+			<param-name>principalSessionName</param-name>
+			<param-value>kael.session.user</param-value>
+		</init-param>
+		<!-- 如果你的user信息保存在cookie中，你可以配置principalCookieName，使得druid知道当前的user是谁 -->
+		<init-param>
+			<param-name>principalCookieName</param-name>
+			<param-value>kael.cookie.user</param-value>
+		</init-param>
+		<!-- druid 0.2.7版本开始支持profile，配置profileEnable能够监控单个url调用的sql列表。 -->
+		<init-param>
+			<param-name>profileEnable</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>DruidWebStatFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- filter可以监控webURl 访问,监控界面的路径配置了 -->
+	<servlet>
+		<servlet-name>DruidStatView</servlet-name>
+		<servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+		<!-- StatViewSerlvet展示出来的监控信息比较敏感，是系统运行的内部情况，如果你需要做访问控制，可以配置allow和deny这两个参数。比如： -->
+		<!-- <init-param> <param-name>allow</param-name> <param-value>128.242.127.1/24,128.242.128.1</param-value> 
+			</init-param> <init-param> <param-name>deny</param-name> <param-value>128.242.127.4</param-value> 
+			</init-param> -->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DruidStatView</servlet-name>
+		<url-pattern>/druid/*</url-pattern>
+	</servlet-mapping>
+	<!-- Druid 配置结束 -->
+
+	<!-- 激活Tomcat的defaultServlet来处理静态文件 -->
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/static/*</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

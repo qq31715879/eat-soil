@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>首页</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/homepage.css">
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form>
+		<div class="layui-collapse">
+			
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">联系方式</h2>
+				<br>
+				<div style="margin-left: 40px">
+					<table class="layui-hide" id="test" lay-filter="test"></table>
+				</div>
+
+
+
+			</div>
+
+		</div>
+		<br> <br>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button id="submitButton" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- 你的HTML代码 -->
+
+	<script src="../layui/layui.all.js"></script>
+	<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可测试提交：
+    var table;
+    ;!function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        //监听提交
+    	  form.on('submit(formDemo)', function(data){
+    	    return false;
+		  });
+        
+    layui.use('table', function(){
+        table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,data:[{'tel':'1234','mail':'1314@11.com'}]
+            ,title: '问答表'
+            ,cols: [[
+                 {field:'tel', title:'电话', fixed: 'left',edit: 'text'}
+                ,{field: 'mail', title:'邮箱',fixed: 'left' ,edit: 'text'}
+            ]]
+            ,page: false
+        });
+
+    });
+    }();
+
+    
+    var $;
+    layui.use(['jquery'], function(){
+        $ = jQuery = layui.$;
+        // 你可以在下面的 js 代码中使用你熟悉的 $, jQuery
+    });
+    
+
+  
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		async : false,
+		data: {key: 'contacttable'
+			},
+		success: function(data) {
+			if (data != '') {
+				tableData = JSON.parse(data);
+				 table.reload('test',{
+	                 data : tableData
+	             });
+			}
+		}
+		});
+
+
+
+   
+    
+    
+    $("#submitButton").on("click",function() {
+    	
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'contacttable',
+    			  value:JSON.stringify(table.cache["test"])
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+
+    
+
+    		 
+    });
+    
+	
+
+    
+    
+ function strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }
+    
+  /**
+  *map转换为json
+  */
+  function mapToJson(map) {
+  return JSON.stringify(strMapToObj(map));
+  }
+
+
+</script>
+</body>
+</html>

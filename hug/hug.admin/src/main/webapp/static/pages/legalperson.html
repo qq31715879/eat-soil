@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>法人</title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+
+<!-- 文副本 css start -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/font.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/normalize.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/default.css" /> -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/wysiwyg-editor.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/demo.css" />
+<!-- 文副本 css end -->
+
+</head>
+<body>
+	<br><br><br>
+	<form>
+	<div class="layui-collapse">
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">大图</h2>
+	        <br />
+	        <form class="layui-form" action="">
+	            <div class="layui-form-item">
+	                <label class="layui-form-label">上传图片</label>
+	                <div class="layui-upload">
+	                    <button type="button" class="layui-btn layui-btn-normal" id="head-pic">选择文件</button>
+	                    <button type="button" class="layui-btn" id="head-upload">开始上传</button>
+	                    <img id="head-pic-img" alt="" src="../../file/view/legalpersonhead" style="width: 92px;height:38px; ">
+	                </div>
+	            </div>
+	        </form>
+		</div>
+		
+		<div class="layui-form-item">
+            <label class="layui-form-label">大图文字</label>
+            <div class="layui-input-block"><input id="headTitle" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+        </div>
+	
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">编辑文本</h2>
+		    <br>
+			<div class="layui-form-item">
+                <label class="layui-form-label">标题1</label>
+                <div class="layui-input-block"><input id="title1" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+	            <h2 class="layui-colla-title">p1列表</h2>
+			    <div style="margin-left: 40px">
+					<table class="layui-hide" id="p1s" lay-filter="p1s"></table>
+				</div>
+			 </div>
+			 
+			<div class="layui-form-item">
+                <label class="layui-form-label">按钮1</label>
+                <div class="layui-input-block"><input id="button1" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+            <h2 class="layui-colla-title">p2列表</h2>
+		    <div style="margin-left: 40px">
+				<table class="layui-hide" id="p2s" lay-filter="p2s"></table>
+			</div>
+			
+			<div class="layui-form-item">
+                <label class="layui-form-label">按钮2</label>
+                <div class="layui-input-block"><input id="button2" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">标题2</label>
+                <div class="layui-input-block"><input id="title2" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">左标题</label>
+                <div class="layui-input-block"><input id="pTitle" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">右标题1</label>
+                <div class="layui-input-block"><input id="prs1" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">右标题2</label>
+                <div class="layui-input-block"><input id="prs2" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">右标题3</label>
+                <div class="layui-input-block"><input id="prs3" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">右标题4</label>
+                <div class="layui-input-block"><input id="prs4" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">标题3</label>
+                <div class="layui-input-block"><input id="title3" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">dt</label>
+                <div class="layui-input-block"><input id="dt" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">dd</label>
+                <div class="layui-input-block"><input id="dd" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+	        
+            <div class="layui-form-item">
+				<h2 class="layui-colla-title">qa列表</h2>
+			    <div style="margin-left: 40px">
+					<table class="layui-hide" id="qas" lay-filter="qas"></table>
+				</div>
+			</div>
+			
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">蓝色背景</label>
+				<div style="margin-left: 40px">
+					<textarea id="p4" name="editor" class="richtext-wysiwyg" placeholder="请输入蓝色背景颜色内容..........."></textarea>
+				</div>
+			</div>
+			
+            <div class="layui-form-item">
+                <label class="layui-form-label">标题4</label>
+                <div class="layui-input-block"><input id="title4" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            
+            
+            <div class="layui-form-item">
+				<h2 class="layui-colla-title">都市介绍</h2>
+			    <div style="margin-left: 40px">
+					<table class="layui-hide" id="citys" lay-filter="citys"></table>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div style="width: 100%; text-align:center;">
+			<button type="button" class="layui-btn" onclick="saveContent();">保存文本</button>
+		</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>
+<script type="text/html" id="addTable">
+<div class="layui-btn-container">
+	<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+</div>          
+</script>
+
+<script type="text/html" id="delTable">
+	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg-editor.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/common.js"></script>
+
+<script type="text/javascript" src="../layui/layui.all.js"></script>
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+
+
+<script type="text/javascript" src="../plug/utils-v01.js"></script>
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer = layui.layer ,form = layui.form;
+        var table = layui.table;
+        BZLayUI.upload("legalpersonhead", "head-pic", "head-upload");
+        
+        wrapOne("p1");
+        wrapOne("p2");
+        wrapQa("qa");
+        wrapCity("city");
+        select();
+    }();
+    
+    function select(){
+    	ajaxReturn("../../admin/select/legalperson", {}, function(data){
+    		$("#headTitle").val(data.headTitle)
+    		$("#title1").val(data.title1);
+    		$("#button1").val(data.button1);
+    		$("#button2").val(data.button2);
+    		$("#title2").val(data.title2);
+    		$("#pTitle").val(data.pTitle);
+    		$("#title3").val(data.title3);
+    		$("#dt").val(data.dt);
+    		$("#dd").val(data.dd);
+    		$("#p3").val(data.p3);
+    		$("#p4").val(data.p4);
+    		$("#title4").val(data.title4);
+    		table.reload("p1s",{data : BZJson.toObject(data.p1Json)});
+    		table.reload("p2s",{data : BZJson.toObject(data.p2Json)});
+    		table.reload("qas",{data : BZJson.toObject(data.qaJson)});
+    		table.reload("citys",{data : BZJson.toObject(data.ciJson)});
+    		for (var i = 0; i < data.prs.length; i++) {
+    			$("#prs" + (i+1)).val(data.prs[i]);
+    		}
+    	});
+    }
+    
+    function saveContent(){
+    	var pTitle = $("#pTitle").val();
+    	if(!isNullOrEmpty(pTitle) && pTitle.length > 10){
+    		var flag = confirm("左标题文字自出超时10格子样式可能有出入 ! 确认提交吗");
+    		if(!flag){
+    			$("#pTitle").focus();
+    			return false;
+    		}
+    	}
+    	
+    	
+    	var prs = new Array();
+    	for (var i = 1; i < 5; i++) {
+    		prs.push($("#prs" + i).val());
+		}
+    	
+    	var legalPerson = {
+    			headTitle : $("#headTitle").val(),
+    			title1 : $("#title1").val(),
+    			p1Json : JSON.stringify(table.cache["p1s"]),
+    			button1 : $("#button1").val(),
+    			p2Json : JSON.stringify(table.cache["p2s"]),
+    			button2 : $("#button2").val(),
+    			title2 : $("#title2").val(),
+    			pTitle : $("#pTitle").val(),
+    			title2 : $("#title2").val(),
+    			prs : prs,
+    			title3 : $("#title3").val(),
+    			dt : $("#dt").val(),
+    			dd : $("#dd").val(),
+    			qaJson : JSON.stringify(table.cache["qas"]),
+    			p4 : $("#p4").val(),
+    			title4 : $("#title4").val(),
+    			ciJson : JSON.stringify(table.cache["citys"])
+    	};
+    	$.ajax({
+            url: "../../admin/legalperson",
+            type: "POST",
+            data: JSON.stringify(legalPerson),//将对象序列化成JSON字符串
+            dataType: "json",
+            contentType : 'application/json;charset=utf-8', //设置请求头信息
+            async: true,
+            success: function (result) {
+            	BZLayUI.alert("保存成功");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+            	BZLayUI.alert("保存失败");
+            }
+        });
+    }
+    
+    function wrapOne(id){
+    	table = layui.table;
+   	 //table.cache["p4s"])
+       layui.use('table', function(){
+           table.render({
+               elem: '#'+id+'s'
+               ,defaultToolbar:[]
+               ,data: [{id: ""}]
+               ,toolbar: '#addTable'
+               ,title: id
+               ,cols: [[
+                    {field : id, title:'主单元', edit: 'text'}
+                   ,{field: 'option', title:'操作', toolbar: '#delTable'}
+               ]]
+               ,page: false
+           });
+       });
+       
+       //监听事件
+       table.on('toolbar('+id+'s)', function(obj){
+           var checkStatus = table.checkStatus(obj.config.id);
+           switch(obj.event){
+               case 'add':
+                   var oldData =  table.cache[id + "s"];
+                   oldData.push({id: ""});
+                   table.reload(id + 's',{
+                       data : oldData
+                   });
+				break;
+           };
+       });
+     	//监听行工具事件
+		table.on('tool('+id+'s)', function(obj){
+		    if(obj.event === 'del'){
+		        layer.confirm('真的删除行么', function(index){
+		            obj.del();
+		            layer.close(index);
+		        });
+		    }
+		});
+    }
+    
+    
+    function wrapQa(id){
+    	table = layui.table;
+    	var data = [{"question" : "", "answer" : ""}];
+   	 //table.cache["p4s"])
+       layui.use('table', function(){
+           table.render({
+               elem: '#'+id+'s'
+               ,defaultToolbar:[]
+               ,data: data
+               ,toolbar: '#addTable'
+               ,title: id
+               ,cols: [[
+                    {field : "question", title : 'question', edit: 'text'},
+                    {field : "answer", title : 'answer', edit: 'text'},
+                    {field: 'option', title:'操作', toolbar: '#delTable'}
+               ]]
+               ,page: false
+           });
+       });
+       
+       //监听事件
+       table.on('toolbar('+id+'s)', function(obj){
+           var checkStatus = table.checkStatus(obj.config.id);
+           switch(obj.event){
+               case 'add':
+                   var oldData =  table.cache[id + "s"];
+                   oldData.push({"question" : "", "answer" : ""});
+                   table.reload(id + 's',{
+                       data : oldData
+                   });
+					break;
+           };
+       });
+     	//监听行工具事件
+		table.on('tool('+id+'s)', function(obj){
+		    if(obj.event === 'del'){
+		        layer.confirm('真的删除行么', function(index){
+		            obj.del();
+		            layer.close(index);
+		        });
+		    }
+		});
+    }
+    
+    function wrapCity(id){
+    	table = layui.table;
+    	var data = [{"citys" : "", "introduces" : ""}];
+   	 //table.cache["p4s"])
+       layui.use('table', function(){
+           table.render({
+               elem: '#'+id+'s'
+               ,defaultToolbar:[]
+               ,data: data
+               ,toolbar: '#addTable'
+               ,title: id
+               ,cols: [[
+                    {field : "citys", title : '都市', edit: 'text'},
+                    {field : "introduces", title : '介绍', edit: 'text'},
+                    {field : 'option', title:'操作', toolbar: '#delTable'}
+               ]]
+               ,page: false
+           });
+       });
+       
+       //监听事件
+       table.on('toolbar('+id+'s)', function(obj){
+           var checkStatus = table.checkStatus(obj.config.id);
+           switch(obj.event){
+               case 'add':
+					var oldData =  table.cache[id + "s"];
+					oldData.push({"citys" : "", "introduces" : ""});
+					table.reload(id + 's',{ data : oldData});
+					break;
+           };
+       });
+     	//监听行工具事件
+		table.on('tool('+id+'s)', function(obj){
+		    if(obj.event === 'del'){
+		        layer.confirm('真的删除行么', function(index){
+		            obj.del();
+		            layer.close(index);
+		        });
+		    }
+		});
+    }
+</script>

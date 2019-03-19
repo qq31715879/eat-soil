@@ -1,0 +1,11 @@
+.layui-colla-icon {
+    display: none;
+}
+
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}

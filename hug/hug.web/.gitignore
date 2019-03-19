@@ -1,0 +1,8 @@
+/target/
+/.settings/
+/.classpath
+/.project
+/bin/
+/logs/
+/test-output/
+/catalina.base/

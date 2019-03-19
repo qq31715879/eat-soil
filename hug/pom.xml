@@ -1,0 +1,286 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hug</groupId>
+	<artifactId>hug</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>HUG</name>
+	<modules>
+		<module>hug.core</module>
+		<module>hug.dao</module>
+		<module>hug.admin</module>
+		<module>hug.web</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<v.maven-compiler-plugin>3.6.1</v.maven-compiler-plugin>
+		<v.jdk>1.7</v.jdk>
+
+		<v.hug>0.0.1-SNAPSHOT</v.hug>
+
+		<v.spring>4.3.4.RELEASE</v.spring>
+		<v.aspectj>1.9.1</v.aspectj>
+		<v.servlet>3.1.0</v.servlet>
+		<v.jstl>1.2</v.jstl>
+
+		<v.dom4j>1.6.1</v.dom4j>
+
+		<v.druid>1.1.9</v.druid>
+		<v.fastjson>1.2.47</v.fastjson>
+		<v.HikariCP>3.2.0</v.HikariCP>
+		<v.mysql>6.0.5</v.mysql>
+		<v.mybatis-spring>1.3.2</v.mybatis-spring>
+		<v.mybatis>3.4.6</v.mybatis>
+		<v.jackson>2.9.5</v.jackson>
+		<v.jedis>2.6.1</v.jedis>
+		<v.commonslang>3.4</v.commonslang>
+		<v.guava>20.0</v.guava>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.hug</groupId>
+				<artifactId>hug.dao</artifactId>
+				<version>${v.hug}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.hug</groupId>
+				<artifactId>hug.core</artifactId>
+				<version>${v.hug}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${v.commonslang}</version>
+			</dependency>
+			
+			<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${v.guava}</version>
+		</dependency>
+			
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${v.jedis}</version>
+			</dependency>
+
+			<!-- aspectj start -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${v.aspectj}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${v.aspectj}</version>
+			</dependency>
+			<!-- aspectj end -->
+
+			<!-- servlet start -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${v.servlet}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${v.jstl}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<!-- servlet end -->
+
+			<dependency>
+				<groupId>javax.websocket</groupId>
+				<artifactId>javax.websocket-api</artifactId>
+				<version>1.1</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>${v.dom4j}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${v.druid}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${v.fastjson}</version>
+			</dependency>
+
+			<!-- 数据库连接池 -->
+			<dependency>
+				<groupId>com.zaxxer</groupId>
+				<artifactId>HikariCP</artifactId>
+				<version>${v.HikariCP}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${v.jackson}</version>
+			</dependency>
+
+			<!-- spring start -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${v.spring}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${v.spring}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${v.spring}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${v.spring}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${v.mybatis-spring}</version>
+			</dependency>
+			<!-- spring end -->
+
+			<!--mybatis依赖 -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${v.mybatis}</version>
+			</dependency>
+
+			<!-- mybatis/spring包 -->
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${v.mybatis-spring}</version>
+			</dependency>
+
+			<!-- mysql驱动包 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${v.mysql}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.carrotsearch</groupId>
+			<artifactId>java-sizeof</artifactId>
+			<version>0.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.rabbitmq</groupId>
+			<artifactId>amqp-client</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${v.maven-compiler-plugin}</version>
+				<configuration>
+					<source>${v.jdk}</source>
+					<target>${v.jdk}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- aspectj 编译时加载 -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>aspectj-maven-plugin</artifactId> 
+				<version>1.4</version> <dependencies> <dependency> <groupId>org.aspectj</groupId> 
+				<artifactId>aspectjrt</artifactId> <version>${v.aspectj}</version> </dependency> 
+				<dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjtools</artifactId> 
+				<version>${v.aspectj}</version> </dependency> </dependencies> <executions> 
+				<execution> <phase>process-sources</phase> <goals> <goal>compile</goal> <goal>test-compile</goal> 
+				</goals> </execution> </executions> <configuration> <outxml>true</outxml> 
+				<source>${v.jdk}</source> <target>${v.jdk}</target> </configuration> </plugin> -->
+		</plugins>
+	</build>
+
+	<!-- 代码库 -->
+	<repositories>
+		<repository>
+			<id>aliyun</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>mvn</id>
+			<url>http://mvnrepository.com/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

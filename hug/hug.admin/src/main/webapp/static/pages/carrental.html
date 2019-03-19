@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>使用说明1</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/homepage.css">
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg-editor.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/common.js"></script>
+
+
+<script type="text/javascript" src="../plug/utils-v01.js"></script>
+
+<!-- 文副本 css start -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/font.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/normalize.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/default.css" /> -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/wysiwyg-editor.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/demo.css" />
+<!-- 文副本 css end -->
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form>
+		<div class="layui-collapse">
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">首页大图</h2>
+				<br>
+				<form class="layui-form" >
+					<div class="layui-form-item">
+						<label class="layui-form-label">输入框</label>
+						<div class="layui-input-block">
+							<input id="useGuide1TopInput" type="text" name="title" required lay-verify="required"
+								placeholder="请输入标题" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">首页大图</label>
+						<div class="layui-upload">
+							<button type="button" class="layui-btn layui-btn-normal"
+								id="carrental">选择文件</button>
+							<button type="button" class="layui-btn" id="carrentalPick1">开始上传</button>
+							<img id="carrental-img" alt="" src="../../file/view/carrental" style="width: 92px;height:38px; ">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">第二部分</h2>
+				<br>
+				<label class="layui-form-label">文本1</label>
+					<div style="margin-left: 40px">
+					<textarea id="useGuide1Area" name="editor" class="richtext-wysiwyg"></textarea>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">标题1</label>
+					<div class="layui-input-block">
+						<input id="useGuide1Part2Input" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+					<div class="layui-form-item">
+					<label class="layui-form-label">列表标题</label>
+					<div class="layui-input-block">
+						<input id="useGuide1Part3Input" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+					<div class="layui-form-item">
+					<label class="layui-form-label">详细内容</label>
+						<div style="margin-left: 40px">
+					<textarea id="useGuide2Area" name="editor" class="richtext-wysiwyg"></textarea>
+				</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">列表1</label>
+					<div class="layui-input-block">
+						<input id="useGuide1Part4Input" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">列表2</label>
+					<div class="layui-input-block">
+						<input id="useGuide1Part5Input" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">列表3</label>
+					<div class="layui-input-block">
+						<input id="useGuide1Part6Input" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			
+				<div class="layui-form-item">
+					<label class="layui-form-label">文本明细</label>
+						<div style="margin-left: 40px">
+					<textarea id="useGuide3Area" name="editor" class="richtext-wysiwyg"></textarea>
+				</div>
+			
+
+			</div>
+			<br>
+			<br>
+		
+		</div>
+		<br> <br>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button id="submitButton" class="layui-btn"   lay-submit="" lay-filter="formDemo">立即提交</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- 你的HTML代码 -->
+
+	<script src="../layui/layui.all.js"></script>
+	<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+     //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer = layui.layer
+            ,form = layui.form;
+        
+        //监听提交
+  	  form.on('submit(formDemo)', function(data){
+  	    return false;
+  	  });
+
+    }();
+
+    
+    var $;
+    layui.use(['jquery'], function(){
+        $ = jQuery = layui.$;
+        // 你可以在下面的 js 代码中使用你熟悉的 $, jQuery
+    });
+    
+
+    
+    BZLayUI.upload("carrental", "carrental", "carrentalPick1");
+    
+    $("#submitButton").on("click",function() {
+    	var controls = document.getElementsByTagName("input");
+    	var map = new Map();
+    	for (var i = 0; i < controls.length; i++) {
+    		if (controls[i].type == 'text') {
+    			map.set(controls[i].id, controls[i].value);
+    		}
+    	}
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'carrental',
+    			value:mapToJson(map)
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+    	
+    	var areas = document.getElementsByTagName("textarea");
+    	var areaMap = new Map();
+    	for (var i = 0; i < areas.length; i++) {
+    		areaMap.set(areas[i].id, areas[i].value);
+    	}
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'carrentalArea',
+    			  value:mapToJson(areaMap)
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+
+
+    		 
+    })
+
+    
+ function strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }
+    
+  /**
+  *map转换为json
+  */
+  function mapToJson(map) {
+  return JSON.stringify(strMapToObj(map));
+  }
+  
+  $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		async : false,
+		data: {key: 'carrentalArea'
+			},
+		success: function(data) {
+			var obj = JSON.parse(data);
+			jQuery.each(obj, function(i, value) {  
+				$("#"+i).val(value);
+
+			});  
+		}
+		});
+  
+  $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'carrental'
+			},
+		success: function(data) {
+			var obj = JSON.parse(data);
+			jQuery.each(obj, function(i, value) {  
+				$("#"+i).val(value);
+
+			});  
+		}
+		});
+
+</script>
+</body>
+</html>

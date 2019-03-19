@@ -1,0 +1,156 @@
+.colored {
+	color: #0382d0;
+	font-weight: 700
+}
+
+.sections6-1 .sections6-head {
+	background: url(../img/page4-pic1.jpg) center top no-repeat;
+	width: 400px;
+	height: 160px;
+	text-align: center;
+	margin: 68px auto 32px
+}
+
+.sections6-1 .sections6-head p {
+	font-size: 30px;
+	padding-top: 38px
+}
+
+.sections6-1 .sections6-txt1 {
+	text-align: center;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 30px;
+	margin-bottom: 60px
+}
+
+.sections6-panel {
+	padding-bottom: 70px
+}
+
+.sections6-panel .header {
+	height: 120px;
+	background: #0382d0;
+	position: relative;
+	z-index: 1;
+	line-height: 38px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	padding: 18px 0;
+	box-sizing: border-box
+}
+
+.sections6-panel .header::after {
+	content: "";
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	position: absolute;
+	top: 120px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -22.5px;
+	border: 45px solid transparent;
+	border-top-color: #0382d0
+}
+
+.sections6-panel .sections6-ways {
+	width: 1200px;
+	height: 148px;
+	background: #ccc;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 20px 0;
+	margin: 74px auto
+}
+
+.sections6-panel .sections6-ways p {
+	font-size: 20px;
+	color: #fff;
+	line-height: 32px
+}
+
+.sections6-panel .sections6-pay {
+	width: 1200px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 30px;
+	font-size: 24px;
+	line-height: 56px
+}
+
+.sections6-panel .sections6-pay dt {
+	color: #0382d0
+}
+
+.sections6-panel .sections6-pay dd {
+	color: #333
+}
+
+.question {
+	font-weight: 700;
+	display: inline-block;
+	display: inline;
+	zoom: 1;
+	color: #0382d0;
+	line-height: 1.42857143;
+}
+
+.answer {
+	font-size: 25px;
+	color: #333;
+}
+
+.sections6-panel .sections6-plans {
+	margin-top: 120px
+}
+
+.sections6-panel .sections6-plan {
+	width: 1200px;
+	margin: 62px auto 0;
+	padding: 0 85px;
+	box-sizing: border-box
+}
+
+.sections6-panel .sections6-plan dt {
+	color: #0382d0;
+	position: relative;
+	z-index: 1;
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 28px
+}
+
+.sections6-panel .sections6-plan dt i.dot {
+	position: absolute;
+	top: 8px;
+	left: -30px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 11px;
+	height: 11px;
+	background: #3695d6;
+	border-radius: 50%;
+	margin-right: 28px
+}
+
+.sections6-panel .sections6-plan dd {
+	line-height: 30px;
+	font-size: 20px
+}
+
+.section6-touchme {
+	width: 852px;
+	height: 224px;
+	background-color: #0382d0;
+	margin: 0 auto 86px;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 35px;
+	box-sizing: border-box;
+	padding: 32px 0
+}

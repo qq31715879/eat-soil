@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>首页</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/homepage.css">
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+		<div class="layui-collapse">
+			
+			<div class="layui-colla-item">
+				<h2 class="layui-colla-title">提交记录</h2>
+				<br>
+				
+				<div style="margin-left: 40px">
+					<table class="layui-hide" id="test" lay-filter="test"></table>
+				</div>
+
+
+
+
+			</div>
+		
+
+
+		</div>
+		<br> <br>
+	
+
+	<!-- 你的HTML代码 -->
+
+	<script src="../layui/layui.all.js"></script>
+	<script>
+    //由于模块都一次性加载,因此不用执行 layui.use() 来加载对应模块,直接使用即可：
+    ;!function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+    }();
+
+    
+    var $;
+    layui.use(['jquery'], function(){
+        $ = jQuery = layui.$;
+        // 你可以在下面的 js 代码中使用你熟悉的 $, jQuery
+    });
+
+
+    layui.use(['element', 'layer'], function(){
+        var element = layui.element;
+        var layer = layui.layer;
+
+    });
+    
+
+	
+
+
+    layui.use('table', function(){
+    	  var table = layui.table;
+    	  
+    	  table.render({
+    	    elem: '#test'
+    	    ,url:'../../sendRecord/getInfo'
+    	    ,cols: [[
+    	      {field:'name', width:120, title: '姓名'}
+    	      ,{field:'tel', width:120, title: '电话'}
+    	      ,{field:'company', width:160, title: '公司名'}
+    	      ,{field:'is1', width:120, title: '租车',templet: function(res){
+    	    	  if (res.is1 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }
+    	      }
+    	      ,{field:'is2', title: '空港送迎', width:120,templet: function(res){
+    	    	  if (res.is2 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }}
+    	      ,{field:'is3', width:200, title: '汽车租赁+无线网络',templet: function(res){
+    	    	  if (res.is3 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }}
+    	      ,{field:'is4', width:120, title: '类似公司',templet: function(res){
+    	    	  if (res.is4 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }}
+    	      ,{field:'is5', width:120, title: '免许取得',templet: function(res){
+    	    	  if (res.is5 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }}
+    	      ,{field:'is6', width:120, title: '个人',templet: function(res){
+    	    	  if (res.is6 == 'true') return '选中';
+    	    	  else return '未选'
+    	    	  }}
+    	    ]]
+    	    ,page: true
+    	  });
+    	});
+    
+	
+
+    
+    
+ function strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }
+    
+  /**
+  *map转换为json
+  */
+  function mapToJson(map) {
+  return JSON.stringify(strMapToObj(map));
+  }
+
+
+</script>
+</body>
+</html>

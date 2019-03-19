@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>考取驾驶证</title>
+<!-- 文副本 css start -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/font.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/normalize.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/default.css" /> -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/wysiwyg-editor.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/demo.css" />
+<!-- 文副本 css end -->
+
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+
+</head>
+<body>
+	<br><br><br>
+	<div>
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">首页大图</h2>
+	        <br>
+	        <form class="layui-form" action="">
+	            <div class="layui-form-item">
+	                <label class="layui-form-label">上传图片</label>
+	                <div class="layui-upload">
+	                    <button type="button" class="layui-btn layui-btn-normal" id="head-pic">选择文件</button>
+	                    <button type="button" class="layui-btn" id="head-upload">开始上传</button>
+	                    <img id="head-pic-img" alt="" src="../../file/view/driverhead" style="width: 92px;height:38px; ">
+	                </div>
+	            </div>
+	        </form>
+	        <div class="layui-form-item">
+                <label class="layui-form-label">大图标题</label>
+                <div class="layui-input-block">
+                    <input id="headTitle" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">编辑文本</h2>
+		    <br>
+			<div class="layui-form-item">
+                <label class="layui-form-label">文本标题</label>
+                <div class="layui-input-block">
+                    <input id="driverTitle" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+			<div style="margin:auto;">
+				<textarea id="driverBody" name="editor" class="richtext-wysiwyg"></textarea>
+			</div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">编辑规则</h2>
+		    <br>
+		    <div class="layui-form-item">
+                <label class="layui-form-label">规则标题</label>
+                <div class="layui-input-block"><input id="driverRuleTitle" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+			<div class="layui-form-item">
+                <label class="layui-form-label">规则1</label>
+                <div class="layui-input-block"><input id="driverRule0" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">规则2</label>
+                <div class="layui-input-block"><input id="driverRule1" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">规则3</label>
+                <div class="layui-input-block"><input id="driverRule2" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">规则4</label>
+                <div class="layui-input-block"><input id="driverRule3" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">资料组图</h2>
+	        <br>
+	        <form class="layui-form" action="">
+	            <div class="layui-form-item">
+	                <label class="layui-form-label">列表图片</label>
+	                <div class="layui-upload">
+	                    <button type="button" class="layui-btn layui-btn-normal" id="ul-pic">选择文件</button>
+	                    <button type="button" class="layui-btn" id="ul-upload">开始上传</button>
+	                    <img id="ul-pic-img" alt="" src="../../file/view/driverul" style="width: 92px;height:38px; ">
+	                </div>
+	            </div>
+	        </form>
+	        <div class="layui-form-item">
+                <label class="layui-form-label">资料标题</label>
+                <div class="layui-input-block"><input id="dataTitle" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+	        <div class="layui-form-item">
+                <label class="layui-form-label">资料1</label>
+                <div class="layui-input-block"><input id="driverDatas0" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">资料2</label>
+                <div class="layui-input-block"><input id="driverDatas1" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">资料3</label>
+                <div class="layui-input-block"><input id="driverDatas2" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">资料4</label>
+                <div class="layui-input-block"><input id="driverDatas3" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">资料5</label>
+                <div class="layui-input-block"><input id="driverDatas4" type="text" name="title" required  lay-verify="required" placeholder="请输入规则" autocomplete="off" class="layui-input"></div>
+            </div>
+		</div>
+		
+		<div style="width: 100%; text-align:center;">
+			<button type="button" class="layui-btn" onclick="saveContent();">保存文本</button>
+		</div>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg-editor.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/common.js"></script>
+
+<script type="text/javascript" src="../layui/layui.all.js"></script>
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+
+
+<script type="text/javascript" src="../plug/utils-v01.js"></script>
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer = layui.layer ,form = layui.form;
+        BZLayUI.upload("driverhead", "head-pic", "head-upload");
+        BZLayUI.upload("driverul", "ul-pic", "ul-upload");
+        select();
+    }();
+    
+    function saveContent(){
+    	var driverTitle = $("#driverTitle").val();
+    	if(isNullOrEmpty(driverTitle)){
+    		alert("文本标题不能为空!");
+    		return false;
+    	}
+    	var driverBody = $("#driverBody").val();
+    	if(isNullOrEmpty(driverBody)){
+    		alert("文本内容不能为空!");
+    		return false;
+    	}
+    	var driverRuleTitle = $("#driverRuleTitle").val();
+    	if(isNullOrEmpty(driverRuleTitle)){
+    		alert("规则标题不能为空!");
+    		return false;
+    	}
+    	var driverRulesStr = "";
+    	for (var i = 0; i < 4; i++) {
+    		var driverRule = $("#driverRule" + i).val();
+    		if(isNullOrEmpty(driverRule)){
+        		alert("规则必须全部填写!");
+        		return false;
+        	}
+    		driverRulesStr += driverRule + ",";
+		}
+    	
+    	var driverDatasStr = "";
+    	for (var i = 0; i < 5; i++) {
+    		var driverData = $("#driverDatas" + i).val();
+    		if(isNullOrEmpty(driverData)){
+        		alert("资料必须全部填写!");
+        		return false;
+        	}
+    		driverDatasStr += driverData + ",";
+		}
+		ajax("../../admin/driver", {
+			driverTitle : driverTitle,
+			headTitle : $("#headTitle").val(),
+			dataTitle : $("#dataTitle").val(),
+			driverBody : driverBody,
+			driverRuleTitle : driverRuleTitle,
+			driverRulesStr : driverRulesStr,
+			driverDatasStr : driverDatasStr
+		}, function(data){
+			if(data){
+				BZLayUI.alert("保存成功");
+			}
+		});
+    }
+    
+    function select(){
+    	ajaxReturn("../../admin/select/driver", {}, function(data){
+    		$("#driverTitle").val(data.driverTitle);
+    		$("#dataTitle").val(data.dataTitle);
+    		$("#headTitle").val(data.headTitle);
+    		$("#driverBody").val(data.driverBody);
+    		$("#driverRuleTitle").val(data.driverRuleTitle);
+    		for (var i = 0; i < data.driverRules.length; i++) {
+    			$("#driverRule" + (i)).val(data.driverRules[i]);
+    			$("#driverDatas" + (i)).val(data.driverDatas[i]);
+    		}
+    		$("#driverDatas4").val(data.driverDatas[4]);
+    	});
+    }
+</script>

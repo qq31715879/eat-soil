@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>wifi租车</title>
+<!-- 文副本 css start -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/font.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/normalize.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/default.css" /> -->
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/wysiwyg-editor.css" />
+<link rel="stylesheet" type="text/css" href="../plug/richtext/wysiwyg/css/demo.css" />
+<!-- 文副本 css end -->
+
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+
+</head>
+<body>
+	<br><br><br>
+	<div>
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">首页大图</h2>
+	        <br>
+	        <form class="layui-form" action="">
+	            <div class="layui-form-item">
+	                <label class="layui-form-label">上产图片</label>
+	                <div class="layui-upload">
+	                    <button type="button" class="layui-btn layui-btn-normal" id="wifi-pic">选择文件</button>
+	                    <button type="button" class="layui-btn" id="wifi-upload">开始上传</button>
+	                    <img id="wifi-pic-img" alt="" src="../../file/view/wifihead" style="width: 92px;height:38px; ">
+	                </div>
+	            </div>
+	        </form>
+	        
+	        <div class="layui-form-item">
+	            <label class="layui-form-label">大图文字</label>
+	            <div class="layui-input-block"><input id="headTitle" type="text" name="input" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+	        </div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">编辑文本</h2>
+		    <br>
+			<div style="margin:auto;">
+				<textarea id="p1" name="editor" class="richtext-wysiwyg" placeholder="请输入p1....."></textarea>
+			</div>
+			<div style="margin:auto;">
+				<textarea id="p2" name="editor" class="richtext-wysiwyg" placeholder="请输入p2....."></textarea>
+			</div>
+			<div class="layui-form-item">
+                <label class="layui-form-label">p3标题</label>
+                <div class="layui-input-block"><input id="p3Title" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+			<div style="margin:auto;">
+				<textarea id="p3Content" name="editor" class="richtext-wysiwyg" placeholder="请输入p3....."></textarea>
+			</div>
+		</div>
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">p4列表</h2>
+		    <div style="margin-left: 40px">
+				<table class="layui-hide" id="p4s" lay-filter="p4s"></table>
+			</div>
+			
+			<div class="layui-form-item">
+                <label class="layui-form-label">p5(椭圆)</label>
+                <div class="layui-input-block"><input id="p5" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">p6</label>
+                <div class="layui-input-block"><input id="p6" type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"></div>
+            </div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">WIFI大图</h2>
+	        <form class="layui-form" action="">
+	            <div class="layui-form-item">
+	                <label class="layui-form-label">上产图片</label>
+	                <div class="layui-upload">
+	                    <button type="button" class="layui-btn layui-btn-normal" id="body-pic">选择文件</button>
+	                    <button type="button" class="layui-btn" id="body-upload">开始上传</button>
+	                    <img id="body-pic-img" alt="" src="../../file/view/wifibody" style="width: 92px;height:38px; ">
+	                </div>
+	            </div>
+	        </form>
+	       <div style="margin:auto;">
+				<textarea id="wifiP1" name="editor" class="richtext-wysiwyg" placeholder="请输入右上角内容....."></textarea>
+			</div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">WIFI时间</label>
+                <div class="layui-input-block"><input id="time" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div style="margin:auto;">
+				<textarea id="detail" name="editor" class="richtext-wysiwyg" placeholder="请输入WIFI注意内容....."></textarea>
+			</div>
+		</div>
+		
+		<div class="layui-colla-item">
+	        <div class="layui-form-item">
+                <label class="layui-form-label">标题</label>
+                <div class="layui-input-block"><input id="title" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">小标题</label>
+                <div class="layui-input-block"><input id="head" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+             <div class="layui-form-item">
+                <label class="layui-form-label">从左到右</label>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容1</label>
+                <div class="layui-input-block"><input id="lis1" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容2</label>
+                <div class="layui-input-block"><input id="lis2" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容3</label>
+                <div class="layui-input-block"><input id="lis3" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容4</label>
+                <div class="layui-input-block"><input id="lis4" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容5</label>
+                <div class="layui-input-block"><input id="lis5" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">内容6</label>
+                <div class="layui-input-block"><input id="lis6" type="text" name="title" required  lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input"></div>
+            </div>
+		</div>
+		
+		<div class="layui-colla-item">
+			<h2 class="layui-colla-title">divs列表</h2>
+		    <div style="margin-left: 40px">
+				<table class="layui-hide" id="divs" lay-filter="divs"></table>
+			</div>
+			<div style="margin:auto;">
+				<textarea id="tips" name="editor" class="richtext-wysiwyg" placeholder="请输入tips内容....."></textarea>
+			</div>
+		</div>
+		
+		<div style="width: 100%; text-align:center;">
+			<button type="button" class="layui-btn" onclick="saveContent();">保存文本</button>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/html" id="addTable">
+<div class="layui-btn-container">
+	<button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+</div>          
+</script>
+
+<script type="text/html" id="delTable">
+	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/wysiwyg-editor.js"></script>
+<script type="text/javascript" src="../plug/richtext/wysiwyg/js/common.js"></script>
+
+<script type="text/javascript" src="../layui/layui.all.js"></script>
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+
+
+<script type="text/javascript" src="../plug/utils-v01.js"></script>
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer = layui.layer ,form = layui.form;
+        var table;
+        BZLayUI.upload("wifihead", "wifi-pic", "wifi-upload");
+        BZLayUI.upload("wifibody", "body-pic", "body-upload");
+        
+        wrapP4s();
+        wrapDivs();
+        select();
+    }();
+    
+    function saveContent(){
+    	var lis = new Array();
+    	for (var i = 1; i < 7; i++) {
+    		var val = $("#lis" + i).val();
+    		if(isNullOrEmpty(val)){
+        		alert("节点内容"+i+"必须填写!");
+        		return false;
+        	}
+    		lis.push(val);
+		}
+    	var wifi = {
+    			headTitle : $("#headTitle").val(),
+    			p1 : $("#p1").val(),
+    			p2 : $("#p2").val(),
+    			p3Title : $("#p3Title").val(),
+    			p3Content : $("#p3Content").val(),
+    			p5 : $("#p5").val(),
+    			p6 : $("#p6").val(),
+    			wifiP1 : $("#wifiP1").val(),
+    			time : $("#time").val(),
+    			detail : $("#detail").val(),
+    			title : $("#title").val(),
+    			head : $("#head").val(),
+    			tips : $("#tips").val(),
+    			p4sJson : JSON.stringify(table.cache["p4s"]),
+    			divsJson : JSON.stringify(table.cache["divs"]),
+    			lis : lis
+    	};
+    	$.ajax({
+            url: "../../admin/wifi",
+            type: "POST",
+            data: JSON.stringify(wifi),//将对象序列化成JSON字符串
+            dataType: "json",
+            contentType : 'application/json;charset=utf-8', //设置请求头信息
+            async: true,
+            success: function (result) {
+            	BZLayUI.alert("保存成功");
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+            	BZLayUI.alert("保存失败");
+            }
+        });
+    	
+    }
+    
+    
+    function wrapP4s(){
+    	table = layui.table;
+    	 //table.cache["p4s"])
+        layui.use('table', function(){
+            table.render({
+                elem: '#p4s'
+                ,defaultToolbar:[]
+                ,data: [{"p4": ""}]
+                ,toolbar: '#addTable'
+                ,title: 'p4'
+                ,cols: [[
+                     {field:'p4', title:'主单元', edit: 'text'}
+                    ,{field: 'option', title:'操作', toolbar: '#delTable'}
+                ]]
+                ,page: false
+            });
+        });
+        
+        //监听事件
+        table.on('toolbar(p4s)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var oldData =  table.cache["p4s"];
+                    oldData.push({"p4": ""});
+                    table.reload('p4s',{
+                        data : oldData
+                    });
+					break;
+            };
+        });
+      	//监听行工具事件
+		table.on('tool(p4s)', function(obj){
+		    if(obj.event === 'del'){
+		        layer.confirm('真的删除行么', function(index){
+		            obj.del();
+		            layer.close(index);
+		        });
+		    }
+		});
+    }
+    
+    function wrapDivs(){
+    	table = layui.table;
+    	 //table.cache["p4s"])
+        layui.use('table', function(){
+            table.render({
+                elem: '#divs'
+                ,defaultToolbar:[]
+                ,data: [{"div": ""}]
+                ,toolbar: '#addTable'
+                ,title: 'div'
+                ,cols: [[
+                     {field:'div', title:'主单元', edit: 'text'}
+                    ,{field: 'option', title:'操作', toolbar: '#delTable'}
+                ]]
+                ,page: false
+            });
+        });
+        
+        //监听事件
+        table.on('toolbar(divs)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var oldData =  table.cache["divs"];
+                    oldData.push({"div": ""});
+                    table.reload('divs',{
+                        data : oldData
+                    });
+					break;
+            };
+        });
+      	//监听行工具事件
+		table.on('tool(divs)', function(obj){
+		    if(obj.event === 'del'){
+		        layer.confirm('真的删除行么', function(index){
+		            obj.del();
+		            layer.close(index);
+		        });
+		    }
+		});
+    }
+    
+    function select(){
+    	ajaxReturn("../../admin/select/wifi", {}, function(data){
+    		$("#headTitle").val(data.headTitle);
+    		$("#p1").val(data.p1);
+    		$("#p2").val(data.p2);
+    		$("#p3Title").val(data.p3Title);
+    		$("#p3Content").val(data.p3Content);
+    		$("#p5").val(data.p5);
+    		$("#p6").val(data.p6);
+    		$("#wifiP1").val(data.wifiP1);
+    		$("#time").val(data.time);
+    		$("#detail").val(data.detail);
+    		$("#title").val(data.title);
+    		$("#head").val(data.head);
+    		$("#tips").val(data.tips);
+    		for (var i = 0; i < data.lis.length; i++) {
+    			$("#lis" + (i+1)).val(data.lis[i]);
+    		}
+    		if(data.p4sJson != undefined){
+    			table.reload("p4s",{data : BZJson.toObject(data.p4sJson)});	
+    		}
+    		if(data.divsJson != undefined){
+    			table.reload("divs",{data : BZJson.toObject(data.divsJson)});
+    		}
+    		
+    	});
+    }
+</script>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>首页</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<link rel="stylesheet" href="../css/homepage.css">
+<script type="text/javascript" src="../layui/layui.utils.js"></script>
+</head>
+<body>
+	<br>
+	<br>
+	<br>
+	<form>
+				<br>
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">输入框</label>
+						<div class="layui-input-block">
+							<input id="topinput" type="text" name="title" required lay-verify="required"
+								placeholder="请输入标题" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">首页大图</label>
+						<div class="layui-upload">
+							<button type="button" class="layui-btn layui-btn-normal"
+								id="useguide4">选择文件</button>
+							<button type="button" class="layui-btn" id="useguide4Pick1">开始上传</button>
+							<img id="useguide4-img" alt="" src="../../file/view/useguide4" style="width: 92px;height:38px; ">
+						</div>
+					</div>
+				</form>
+				<br>
+				<div class="layui-form-item">
+					<label class="layui-form-label">主标题</label>
+					<div class="layui-input-block">
+						<input id="input2" type="text" name="title" required lay-verify="required"
+							placeholder="请输入主标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">大标题：</label>
+				</div>
+				<div style="margin-left: 40px">
+					<table class="layui-hide" id="mainTitle" lay-filter="mainTitle"></table>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">小标题：</label>
+				</div>
+				<div style="margin-left: 40px">
+					<table class="layui-hide" id="subTitle" lay-filter="subTitle"></table>
+				</div>
+
+				<script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+            </div>
+        </script>
+
+				<script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+        
+				<script type="text/html" id="toolbarDemo2">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+            </div>
+        </script>
+
+				<script type="text/html" id="barDemo2">
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+
+			
+
+
+		
+
+		<br> <br>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button id="submitButton" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- 你的HTML代码 -->
+
+	<script src="../layui/layui.all.js"></script>
+	<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    limit = 10000;
+    ;!function(){
+        var layer = layui.layer
+            ,form = layui.form;
+        
+        //监听提交
+    	  form.on('submit(formDemo)', function(data){
+    	    return false;
+    	  });
+
+    }();
+
+    
+    var $;
+    layui.use(['jquery'], function(){
+        $ = jQuery = layui.$;
+        // 你可以在下面的 js 代码中使用你熟悉的 $, jQuery
+    });
+
+
+
+    var tableData = [{
+        "bigTitle": "请输入主标题"
+    },
+        {
+            "bigTitle": "请输入主标题"
+        }
+    ];
+    
+
+    var tableData2 = [  {"bigTitle":"请输入主标题",
+      	"littleTitle":"请输入副标题",
+      	"littleInfo":"请输入详细信息"}
+    ];
+    
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'homepage123'
+			},
+		success: function(data) {
+			var obj = JSON.parse(data);
+			jQuery.each(obj, function(i, value) {  
+				$("#"+i).val(value);
+
+			});  
+		}
+		});
+    
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'homepageMainTitle'
+			},
+		success: function(data) {
+			tableData = JSON.parse(data);
+			 table.reload('mainTitle',{
+                 data : tableData
+             });
+		}
+		});
+    
+
+    $.ajax({
+		url:"../../homepage/getInfo",
+		type: "GET",
+		data: {key: 'homepageSubTitle'
+			},
+		success: function(data) {
+			tableData2 = JSON.parse(data);
+			 table.reload('subTitle',{
+                 data : tableData2
+             });
+		}
+		});
+
+
+    var table;
+    layui.use('table', function(){
+        table = layui.table;
+
+        table.render({
+            elem: '#mainTitle'
+            ,defaultToolbar:[]
+            ,data:tableData
+            ,toolbar: '#toolbarDemo'
+            ,title: '主单元表'
+            ,cols: [[
+                 {field:'bigTitle', title:'主单元', fixed: 'left',edit: 'text'}
+                ,{field: 'option', title:'操作', toolbar: '#barDemo'}
+            ]]
+            ,page: false
+            ,limit:limit
+        });
+        
+        table.render({
+            elem: '#subTitle'
+            ,defaultToolbar:[]
+            ,data:tableData2
+            ,toolbar: '#toolbarDemo2'
+            ,title: '主单元表'
+            ,cols: [[
+                 {field:'bigTitle', title:'大单元', fixed: 'left',edit: 'text',sort: true}
+                ,{field:'littleTitle', title:'小单元', fixed: 'left',edit: 'text'}
+                ,{field:'littleInfo', title:'单元详情', fixed: 'left',event:'setInfo',style:'cursor: pointer;'}
+                ,{field: 'option', title:'操作', toolbar: '#barDemo2'}
+            ]]
+            ,page: false
+            ,limit:limit
+        });
+        
+        //监听事件
+        table.on('toolbar(mainTitle)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var oldData =  table.cache["mainTitle"];
+                    var data1= {
+                        "bigTitle": "请输入主标题",
+                    };
+                    oldData.push(data1);
+                    table.reload('mainTitle',{
+                        data : oldData
+                    });
+
+            };
+        });
+        //监听事件
+        table.on('toolbar(subTitle)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'add':
+                    var oldData =  table.cache["subTitle"];
+                    var data1= {
+                        "bigTitle":"请输入主标题",
+                      	"littleTitle":"请输入副标题",
+                      	"littleInfo":"请输入详细信息"
+                    };
+                    oldData.push(data1);
+                    table.reload('subTitle',{
+                        data : oldData
+                    });
+
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(mainTitle)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                	var oldData =  table.cache["subTitle"];
+                	var length = oldData.length - 1;
+                	for(var i = length;i>=0;i--){
+                		 if(oldData[i].bigTitle== data.bigTitle){
+                			 oldData.splice(i,1);
+                		 }
+                		 }
+                    obj.del();
+                    table.reload('subTitle',{
+                        data : oldData
+                    });
+                    layer.close(index);
+                });
+            }
+        });
+        
+        table.on('tool(subTitle)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    obj.del();
+                    layer.close(index);
+                });
+            }
+            else if (obj.event === 'setInfo') {
+          	  layer.prompt({
+      	        formType: 2
+      	        ,title: '修改子标题  为 ['+ data.littleTitle +'] 的详情'
+      	        ,value: data.littleInfo
+      	      }, function(value, index){
+      	        layer.close(index);
+      	        
+      	        //这里一般是发送修改的Ajax请求
+      	        
+      	        //同步更新表格和缓存对应的值
+      	        obj.update({
+      	        	littleInfo: value
+      	        });
+      	      });
+      }
+        });
+
+    });
+
+    $("#test9").click(function () {
+        console.log(JSON.stringify(table.cache["test"]));
+    });
+    
+    
+    BZLayUI.upload("useguide4","useguide4","useguide4Pick1");
+    
+    $("#submitButton").on("click",function() {
+    	var controls = document.getElementsByTagName("input");
+    	var map = new Map();
+    	for (var i = 0; i < controls.length; i++) {
+    		if (controls[i].type == 'text') {
+    			map.set(controls[i].id, controls[i].value);
+    		}
+    	}
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'homepage123',
+    			value:mapToJson(map)
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+    	
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'homepageMainTitle',
+    			  value:JSON.stringify(table.cache["mainTitle"])
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+    	
+    	
+    	$.ajax({
+    		url:"../../homepage/save",
+    		type: "POST",
+    		data: {key: 'homepageSubTitle',
+    			  value:JSON.stringify(table.cache["subTitle"])
+    			},
+    		success: function(data) {
+    			if(data){
+        			BZLayUI.alert("保存成功 ! ");
+        		}
+    		}
+    		});
+
+
+    		 
+    })
+
+    
+ function strMapToObj(strMap){
+    let obj= Object.create(null);
+    for (let[k,v] of strMap) {
+      obj[k] = v;
+    }
+    return obj;
+  }
+    
+  /**
+  *map转换为json
+  */
+  function mapToJson(map) {
+  return JSON.stringify(strMapToObj(map));
+  }
+
+
+</script>
+</body>
+</html>
